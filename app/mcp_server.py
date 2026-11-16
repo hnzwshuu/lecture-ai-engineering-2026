@@ -1,4 +1,4 @@
-"""第5回: 用語集と各回の要点を MCP サーバーとして公開する。
+"""第6回: 用語集と各回の要点を MCP サーバーとして公開する。
 
 使い方:
     uv run python -m app.agent --mcp --list-tools   # このサーバーが公開するツールを一覧する（APIキー不要）
@@ -25,9 +25,9 @@ server = MCPServer(
 
 # 第3回と同じ関数を、そのまま MCP のツールとして公開する。docstring と型ヒントが説明文になる
 server.tool()(tools.search_glossary)
+
 server.tool()(tools.get_lecture_summary)
 server.tool()(tools.make_quiz)
-
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="用語集 MCP サーバー")
